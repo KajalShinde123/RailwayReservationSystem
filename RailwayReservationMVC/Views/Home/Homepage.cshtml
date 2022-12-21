@@ -1,0 +1,181 @@
+﻿@model IEnumerable<RailwayReservationMVC.Models.TrainDetails>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homepage </title>
+</head>
+<body>
+
+    <!--navbar showing all options-->
+    <nav class="navbar navbar-expand-lg bg-info fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">RailYatri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="~/Home/Homepage">Home</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/LogIn">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/SignUp">SignUp</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Logout">LogOut</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+
+
+    <!--Search Trains-->
+    @using (Html.BeginForm("Homepage", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="Search" />
+    }
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>Train Name</th>
+                <th>Departure</th>
+                <th>Destination</th>
+                <th>Fare</th>
+                <th>Arrival time</th>
+                <th>Departure Time</th>
+                <th>Total Seat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="3" style="color:red">
+                        No matchh any document
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.TrainName</td>
+                        <td>@item.SourceStation</td>
+                        <td>@item.DestinationStation</td>
+                        <td>@item.Fare</td>
+                        <td>@item.ArrivalTime</td>
+                        <td>@item.DepartureTime</td>
+                        <td>@item.TotalSeats</td>
+                    </tr>
+                }
+
+
+
+            }
+        </tbody>
+    </table>
+
+ 
+  <!-- Footer -->
+  <!--<footer
+          class="text-center text-lg-start text-dark"
+          style="background-color: #ECEFF1"
+          
+          >-->
+    <!-- Section: Social media -->
+    <!--<section
+             class="d-flex justify-content-between p-2 text-white"
+             style="background-color: #21D192"
+             >-->
+      <!-- Left -->
+      <!--<div class="me-1">
+        <span>Get connected with us on social networks:</span>
+      </div>-->
+      
+      <!-- Right -->
+    <!--</section>-->
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <!--<section class="">
+      <div class="container text-center text-md-start mt-5">-->
+        <!-- Grid row -->
+        <!--<div class="row mt-3">-->
+          <!-- Grid column -->
+          <!--<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">-->
+            <!-- Content -->
+            <!--<h6 class="text-uppercase fw-bold">RailYatri</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+             Plan your joourney with Railyatri.
+            </p>
+          </div>-->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <!--<div class="col-md-2 col-lg-2 col-xl-2 ">-->
+              <!-- Links -->
+              <!--<h6 class="text-uppercase fw-bold">Developers</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p>
+                  <a href="https://github.com/akshbedarkar" class="text-dark">Akshata Bedarkar</a>
+              </p>
+              <p>
+                  <a href="https://github.com/ariba0611" class="text-dark">Ariba Siddique</a>
+              </p>
+              <p>
+                  <a href="https://github.com/KajalShinde123" class="text-dark">Kajal Sinde</a>
+              </p>
+              <p>
+                  <a href="#!" class="text-dark">Nidhi Sharma</a>
+              </p>
+              <p>
+                  <a href="https://github.com/Rutuja-s-jadhav" class="text-dark">Rutuja Jadhav</a>
+              </p>
+          </div>-->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <!--<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">-->
+            <!-- Links -->
+            <!--<h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="Login" class="text-dark">Your Account</a>
+            </p>
+            
+          </div>
+        </div>
+       
+      </div>
+    </section>
+ 
+  </footer>
+  
+</html>-->

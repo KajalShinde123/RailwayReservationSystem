@@ -1,0 +1,51 @@
+﻿@model RailwayReservationMVC.Models.User
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>SignUp</title>
+</head>
+<body>
+    <form action="AdminLogin" method="post" style="background-color:aliceblue">
+        <div class="border" style=" text-align:center">
+            <h2>Login</h2>
+            
+            <hr>
+
+            <div class="form-group  col-12 mt-3 w-auto">
+
+                @Html.DisplayNameFor(model => model.Email)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                @Html.TextBoxFor(model => model.Email)<br/>
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group  col-12 mt-3 col-xs-7">
+                @Html.DisplayNameFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password)<br/>
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group  col-12 mt-3 col-xs-7">
+                @Html.DisplayNameFor(model => model.Role)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                @Html.PasswordFor(model => model.Role)<br/>
+                @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-12 mt-3">
+                <button type="submit" class="btn btn-primary btn-sm">Login</button>
+            </div>
+
+
+
+            
+        </div>
+    </form>
+
+
+
+
+</body>
+</html>
+

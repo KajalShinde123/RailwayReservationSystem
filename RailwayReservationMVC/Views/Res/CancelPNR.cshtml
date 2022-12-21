@@ -1,0 +1,17 @@
+﻿@model RailwayReservationMVC.Models.Reservation
+
+
+@Html.ActionLink("Back", "afterlogin", "Home", "", new { @class = "btn btn-primary" })
+
+
+<h2>CancelPNR</h2>
+@using (Html.BeginForm("CancelPNR", "Res", FormMethod.Post))
+{
+    @Html.DisplayNameFor(model => model.PNR_NO)
+    @Html.TextBox("PNR")
+
+    <button type="submit" name="Cancel">Cancel</button>
+
+}
+
+
